@@ -1,0 +1,18 @@
+{
+    "name": "mhmmdq/zarinpal",
+    "description": "A class for easy connection to the zarinpal port",
+    "license": "MIT",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Mhmmdq\\Zarinpal\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mhmmdq",
+            "email": "mhmmdq@mhmmdq.ir"
+        }
+    ],
+    "require": {}
+}
