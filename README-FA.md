@@ -1,10 +1,12 @@
+<img src="https://repository-images.githubusercontent.com/410418462/1f0e17c2-0624-4d78-afd8-7c44a2195af9" width="100%">
+
 # کلاس پرداخت با [زرین پال](https://zarinpal.com "ZarinPal")
-یک کلاس برای ساده کردن عملیات پرداخت و تأیید پرداخت خدمات درگاه پرداخت زرین پال ( [به فارسی بخوانید](./README-FA.md "به فارسی بخوانید") )
+یک کلاس برای ساده کردن عملیات پرداخت و تأیید پرداخت خدمات درگاه پرداخت زرین پال
 
 ## نصب و استفاده
 
 ### نصب با کامپوزر
-    composer require mhmmdq/zarinpal 
+composer require mhmmdq/zarinpal 
 
 با دستور بالا به راحتی کلاس را به پروژه خود اضافه کنید
 
@@ -30,17 +32,17 @@ use Mhmmdq\Zarinpal\Zarinpal;
 
 ```php
 <?php
-include  '../vendor/autoload.php';
+include  'vendor/autoload.php';
 
-    use Mhmmdq\Zarinpal\Zarinpal;
-    
-    $merchant = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx';
-    $amount = 200000;
-    $callback_url = 'https://zarinpal.mhmmdq.ir/verify.php';
-    $description = 'توضیحات پرداخت';
-    $metadata = ['name' => 'mhmmdq'];
+use Mhmmdq\Zarinpal\Zarinpal;
 
-	$zarinpal = new Zarinpal($merchant , $amount , $callback_url , $description , $metadata);
+$merchant = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx';
+$amount = 200000;
+$callback_url = 'https://zarinpal.mhmmdq.ir/verify.php';
+$description = 'توضیحات پرداخت';
+$metadata = ['name' => 'mhmmdq'];
+
+$zarinpal = new Zarinpal($merchant , $amount , $callback_url , $description , $metadata);
 
     
 ```
@@ -63,13 +65,13 @@ $zarinpal->PayMentPortal(false);
 ```php
 <?php
 
-    include  './vendor/autoload.php';
+include  'vendor/autoload.php';
 
-    use Mhmmdq\Zarinpal\Zarinpal;
+use Mhmmdq\Zarinpal\Zarinpal;
 
-    $zarinpal = new Zarinpal('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' , 10000);
+$zarinpal = new Zarinpal('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' , 200000);
 
-    var_dump($zarinpal->PayMentVerify());
+var_dump($zarinpal->PayMentVerify());
 ```
 اگر پرداخت موفقیت امیز باشد در ارایه بازگشتی کلیدی به عنوان `status` با مقدار `success` وجود خواهد داشت
 
