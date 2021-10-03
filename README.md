@@ -1,3 +1,5 @@
+<img src="https://repository-images.githubusercontent.com/410418462/1f0e17c2-0624-4d78-afd8-7c44a2195af9" width="100%">
+
 # Payment class with [ZarinPal](https://zarinpal.com "ZarinPal")
 A class to simplify payment operations and confirm payment of ZarrinPal payment gateway service ( [به فارسی بخوانید](./README-FA.md "به فارسی بخوانید") )
 
@@ -30,17 +32,17 @@ Build an object and enter the required values
 
 ```php
 <?php
-include  '../vendor/autoload.php';
+include  'vendor/autoload.php';
 
-    use Mhmmdq\Zarinpal\Zarinpal;
-    
-    $merchant = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx';
-    $amount = 200000;
-    $callback_url = 'https://zarinpal.mhmmdq.ir/verify.php';
-    $description = 'توضیحات پرداخت';
-    $metadata = ['name' => 'mhmmdq'];
+use Mhmmdq\Zarinpal\Zarinpal;
 
-	$zarinpal = new Zarinpal($merchant , $amount , $callback_url , $description , $metadata);
+$merchant = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx';
+$amount = 200000;
+$callback_url = 'https://zarinpal.mhmmdq.ir/verify.php';
+$description = 'توضیحات پرداخت';
+$metadata = ['name' => 'mhmmdq'];
+
+$zarinpal = new Zarinpal($merchant , $amount , $callback_url , $description , $metadata);
 
     
 ```
@@ -63,13 +65,13 @@ To confirm the payment, just do the following and then you will have a presentat
 ```php
 <?php
 
-    include  './vendor/autoload.php';
+include  'vendor/autoload.php';
 
-    use Mhmmdq\Zarinpal\Zarinpal;
+use Mhmmdq\Zarinpal\Zarinpal;
 
-    $zarinpal = new Zarinpal('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' , 10000);
+$zarinpal = new Zarinpal('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' , 200000);
 
-    var_dump($zarinpal->PayMentVerify());
+var_dump($zarinpal->PayMentVerify());
 ```
 If the payment is successful, there will be a key return in the array as `status` with the value of `success`
 
