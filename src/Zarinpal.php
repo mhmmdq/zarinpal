@@ -244,7 +244,7 @@
                 
                  if($result['data']['code'] == 100) {
 
-                     return 'https://www.zarinpal.com/pg/StartPay/' . $result['data']["authority"];
+                     return ['https://www.zarinpal.com/pg/StartPay/' . $result['data']["authority"] , $result['data']["authority"]];
 
                  }
 
@@ -273,7 +273,7 @@
                     return $paymentLocation;
 
                }else {
-                        header("Location: " . $paymentLocation);
+                        header("Location: " . $paymentLocation[0]);
                         exit();
                }
 
